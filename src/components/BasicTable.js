@@ -14,7 +14,13 @@ export const BasicTable = () => {
     // console.log("hello");
 
     //CREATE A TABLE INSTANCE
-    const tableInstance = useTable({//useTable hook.. We pass in an object as argument 
+    const {
+        getTableProps,
+        getTableBodyProps,
+        headerGroups,
+        rows,
+        prepareRow,
+    }    = useTable({//useTable hook.. We pass in an object as argument 
         // columns: COLUMNS,//we specify two properties, columns and rows
         // data: MOCK_DATA
 
@@ -24,14 +30,15 @@ export const BasicTable = () => {
 
     //STEP 5: we need to use the table instance with our jsx to render all necessary UI
     //we begin by destructuring a couple of properties and methods from the table instance
+    //AT THE END HE DELETED THIS BELOW AND ADDED THE FUNCTIONS ABOVE.
 
-    const {//these are basically functions and arrays that the useTable hook from react table package has given to us to eanle easy table creation
-        getTableProps,//this is a function that needs to be destructured on the table tag
-        getTableBodyProps,
-        headerGroups,
-        rows,
-        prepareRow,
-    } = tableInstance
+    // const {//these are basically functions and arrays that the useTable hook from react table package has given to us to eanle easy table creation
+    //     getTableProps,//this is a function that needs to be destructured on the table tag
+    //     getTableBodyProps,
+    //     headerGroups,
+    //     rows,
+    //     prepareRow,
+    // } = tableInstance
 
     return (
       //STEP 4: define a basick table structure just using html
